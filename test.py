@@ -77,3 +77,24 @@
 # x = Student("Mike", "Olsen", 2022)
 # x.welcome()
 
+## Iterations
+import time
+
+class MyNumbers:
+    def __iter__(self):
+        self.a = 1
+        return self
+
+    def __next__(self):
+        x = self.a
+        self.a += 1
+        return x
+
+myClass = MyNumbers()
+myIter = iter(myClass)
+
+for i in myIter:
+    print(i)
+    if(i >= 1000):
+        break
+    time.sleep(.001)
